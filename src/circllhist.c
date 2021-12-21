@@ -804,10 +804,10 @@ int_scale_to_hist_bucket(int64_t value, int scale) {
     value *= 10;
     scale -= 1;
   }
-  while(unlikely(value >= 100)) {
-    value /= 10;
-    scale++;
-  }
+//   while(unlikely(value >= 100)) {
+//     value /= 10;
+//     scale++;
+//   }
   if(unlikely(scale < -128)) return hb;
   if(unlikely(scale > 127)) return hbnan;
   hb.val = sign * value;
